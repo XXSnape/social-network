@@ -1,0 +1,5 @@
+[
+    ["/api/users/5", "GET"],
+    ["/api/users/5/follow", "DELETE"],
+    ["/api/tweets/5/follow", "DELETE"]
+]

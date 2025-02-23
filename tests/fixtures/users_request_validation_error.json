@@ -1,0 +1,18 @@
+[
+    ["api/users", "POST", {"name": "name5", "token": "test"}],
+    ["api/users", "POST", {"name": "name5", "token": ""}],
+    ["api/users", "POST", {"name": "", "token": "test5"}],
+    ["api/users", "POST", {"token": "123"}],
+    ["api/users", "POST", {"name": "name5"}],
+    ["api/users", "POST", {}],
+    ["api/users", "POST", "abc"],
+    ["/api/users/1/follow", "DELETE", null],
+    ["/api/users/12345678901/follow", "DELETE", null],
+    ["/api/users/-1/follow", "DELETE", null],
+    ["/api/users/abc/follow", "DELETE", null],
+    ["/api/users/2/follow", "DELETE", null],
+    ["/api/tweets/1/follow", "DELETE", null],
+    ["/api/tweets/12345678901/follow", "DELETE", null],
+    ["/api/tweets/-1/follow", "DELETE", null],
+    ["/api/tweets/abc/follow", "DELETE", null]
+]

@@ -1,0 +1,6 @@
+[
+    ["/api/tweets/4/likes", "POST"],
+    ["/api/tweets/3/likes", "DELETE"],
+    ["/api/tweets/3", "DELETE"],
+    ["/api/tweets/4", "DELETE"]
+]

@@ -1,0 +1,5 @@
+[
+    ["api/tweets/1/likes", "test"],
+    ["api/tweets/1/likes", "test2"],
+    ["api/tweets/2/likes", "test3"]
+]

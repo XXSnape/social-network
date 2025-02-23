@@ -1,0 +1,46 @@
+[
+    ["/api/tweets", "POST", {}],
+    [
+        "/api/tweets",
+        "POST",
+        {"tweet_data": "content", "tweet_media_ids": ["abc"]}
+    ],
+    [
+        "/api/tweets",
+        "POST",
+        {"tweet_data": "content", "tweet_media_ids": [-1]}
+    ],
+    [
+        "/api/tweets",
+        "POST",
+        {"tweet_data": "content", "tweet_media_ids": [12345678901]}
+    ],
+    [
+        "/api/tweets",
+        "POST",
+        {"tweet_data": "content", "a": "b"}
+    ],
+    [
+        "/api/tweets",
+        "POST",
+        {"tweet_data": ""}
+    ],
+    [
+        "/api/tweets",
+        "POST",
+        {}
+    ],
+    [
+        "/api/tweets",
+        "POST",
+        "abc"
+    ],
+    ["/api/tweets/-1", "DELETE", null],
+    ["/api/tweets/abc", "DELETE", null],
+    ["/api/tweets/12345678901", "DELETE", null],
+    ["/api/tweets/1/likes", "POST", null],
+    ["/api/tweets/abc/likes", "POST", null],
+    ["/api/tweets/-1/likes", "DELETE", null],
+    ["/api/tweets/abc/likes", "DELETE", null],
+    ["/api/tweets/12345678901/likes", "DELETE", null]
+]

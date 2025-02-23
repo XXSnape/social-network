@@ -1,0 +1,26 @@
+services:
+
+  postgres_test:
+    image: postgres:13
+    container_name: postgres_test
+    env_file:
+      - ./.env
+    networks:
+      - test
+
+  app:
+    build:
+      context: .
+    container_name: fastapi_test
+    volumes:
+      - ../alembic.ini:/app/alembic.ini
+      - ../src:/app/src
+      - ../pytest.ini:/app/pytest.ini
+    networks:
+      - test
+    depends_on:
+      - postgres_test
+    restart: on-failure
+
+networks:
+  test:

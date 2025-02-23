@@ -1,0 +1,45 @@
+services:
+
+  postgres:
+    container_name: postgres
+    image: postgres:13
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./db/:/var/lib/postgresql/data
+    env_file:
+      - ./.env
+    networks:
+      - twitter
+    restart: on-failure
+
+  app:
+    container_name: fastapi
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./upload_files:/app/src/upload_files
+    networks:
+      - twitter
+    depends_on:
+      - postgres
+    restart: on-failure
+
+  nginx_server:
+    container_name: nginx
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+       - ./static:/usr/share/nginx/html
+       - ./upload_files:/usr/share/nginx/html/upload_files
+    networks:
+      - twitter
+    depends_on:
+      - app
+    restart: on-failure
+
+networks:
+  twitter:
