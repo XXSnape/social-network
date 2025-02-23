@@ -32,13 +32,13 @@ class UserModel(Base):
         secondary="followers",
         primaryjoin="UserModel.id == FollowerModel.user_id",
         secondaryjoin="UserModel.id == FollowerModel.follower_id",
-    )  #
+    )  # Подписчики пользователя
     following: Mapped[list["UserModel"]] = relationship(
         back_populates="followers",
         secondary="followers",
         primaryjoin="UserModel.id == FollowerModel.follower_id",
         secondaryjoin="UserModel.id == FollowerModel.user_id",
-    )
+    ) # Пользователи, на которых подписан текущий
 
 
 class FollowerModel(Base):
