@@ -60,7 +60,7 @@ ___
 
 1) ### Клонирование репозитория:
 ```sh
-git clone https://github.com/raydqver/social-network.git
+git clone https://github.com/XXSnape/social-network.git
 ```
 2) ### Создание файла .env:
 
